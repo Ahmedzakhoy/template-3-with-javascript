@@ -374,9 +374,7 @@ max-width: 100vw;
 }
 /*End landing*/
 /* Start articles */
-.articles .container {
 
-}
 .articles .article-container {
     display: flex;
     flex-direction: row;
@@ -658,6 +656,93 @@ width: 100%;
 
 }
 /* End Features */
+
+
+/* Start testimonials */
+.testimonials {
+    background-color: var(--main-ec-color);
+    padding-top: var(--main-margin);
+    padding-bottom: var(--main-margin);
+    z-index: -10;
+}
+
+
+.testimonials .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 50px;
+    gap: 50px;
+}
+.testimonials .testimonials-container .testimonials-element {
+    width: 280px;
+    max-width: 70vw;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 7px;
+    position: relative;
+    padding: 5px 20px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 50%);
+}
+@media (max-width: 440px) {
+
+    .testimonials .testimonials-container .testimonials-element {
+        margin: 0;
+    }
+}
+.testimonials .testimonials-container .testimonials-element .avatar {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid var(--main-ec-color);
+    
+}
+@media (max-width: 440px) {
+
+    .testimonials .testimonials-container .testimonials-element .avatar {
+        right: 0;
+        width: 75px;
+        height: 75px;
+        top: -37.5px;
+
+    }
+}
+@media (max-width: 992px) {
+    .testimonials .testimonials-container .testimonials-element .avatar {
+        right: 0;
+    }
+}
+.testimonials .testimonials-container .testimonials-element .avatar img {
+    width: 100%;
+}
+
+.testimonials .testimonials-container .testimonials-element h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.testimonials .testimonials-container .testimonials-element .job-title {
+    color: #777;
+}
+.testimonials .testimonials-container .testimonials-element .stars i {
+    font-size: 18px;
+    margin: 5px 0;
+}
+.testimonials .testimonials-container .testimonials-element p {
+    margin: 0 0 10px;
+    line-height: 1.3;
+    color: #777;
+}
+.testimonials .testimonials-container .testimonials-element .stars .golden-star {
+    color: gold;
+
+} 
+/* Start testimonials */
+
 
 /* Start animation  */
 @keyframes up-and-down {
