@@ -504,6 +504,160 @@ width: 100%;
 }
 /* End gallery */
 
+/* Start Features */
+.features {
+    margin-top: var(--main-margin);
+    margin-bottom: var(--main-margin);
+}
+.features .features-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+@media (max-width: 768px) {
+    .features .features-container {
+        justify-content: space-around;
+    }
+}
+.features .features-container .features-element {
+    width: 300px;
+    max-width: 90vw;
+    border: 1px solid #aaa;
+    padding-bottom: calc(var(--main-margin) - 20px);
+}
+.features .features-container .features-element .feat-head {
+    position: relative;
+    overflow: hidden;
+
+}
+.features .features-container .features-element:first-child .feat-head::before {
+    background-color: rgba(255, 51, 51, 0.2);
+}
+.features .features-container .features-element:nth-child(2) .feat-head::before {
+    background-color: rgba(51, 204, 51, 0.2);
+}
+.features .features-container .features-element:last-child .feat-head::before {
+    background-color: rgba(0, 255, 153, 0.2);
+}
+.features .features-container .features-element .feat-head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.features .features-container .features-element .feat-head::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -75%;
+    left: 0;
+    background-color: white;
+    transform: skewY(200deg);
+    transition: var(--main-transition);
+
+}
+.features .features-container .features-element:hover .feat-head::after {
+    transform: skewY(160deg);
+}
+.features .features-container .features-element .feat-head img {
+    width: 100%;
+}
+.features .features-container .features-element .feat-body {
+    padding: 0 10px ;
+}
+.features .features-container .features-element .feat-body h1{
+    margin: 20px auto 40px;
+    width: fit-content;
+    font-size: 40px;
+    position: relative;
+}
+.features .features-container .features-element:first-child .feat-body h1:after {
+    background-color: rgb(255, 51, 51);
+
+}
+.features .features-container .features-element:nth-child(2) .feat-body h1:after {
+    background-color: rgb(51, 204, 51);
+
+}
+.features .features-container .features-element:last-child .feat-body h1:after {
+    background-color: rgb(0, 255, 153);
+
+}
+.features .features-container .features-element .feat-body h1:after {
+    content: "";
+    height: 4px;
+    width: 80%;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.features .features-container .features-element .feat-body p {
+    line-height: 2;
+    color: #777;
+}
+.features .features-container .features-element .feat-foot {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+}
+.features .features-container .features-element:first-child .feat-foot a {
+    border-color: rgb(255, 51, 51) ;
+    color: rgb(255, 51, 51) ;
+}
+.features .features-container .features-element:nth-child(2) .feat-foot a {
+    border-color: rgb(51, 204, 51);
+    color: rgb(51, 204, 51);
+}
+.features .features-container .features-element:last-child .feat-foot a {
+    border-color: rgb(0, 255, 153);
+    color: rgb(0, 255, 153);
+}
+.features .features-container .features-element .feat-foot a {
+    padding: 7px 28px;
+    border: 3px solid;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    display: inline-block;
+    transition: var(--main-transition);
+}
+.features .features-container .features-element .feat-foot a::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    transition: var(--main-transition);
+    z-index: -1;
+}
+.features .features-container .features-element:first-child .feat-foot a::before {
+    background-color: rgb(255, 51, 51) ;
+}
+.features .features-container .features-element:nth-child(2) .feat-foot a::before {
+    background-color: rgb(51, 204, 51);
+}
+.features .features-container .features-element:last-child .feat-foot a::before {
+    background-color: rgb(0, 255, 153);
+}
+.features .features-container .features-element:hover .feat-foot a::before {
+    left: 0;
+}
+.features .features-container .features-element:hover .feat-foot a {
+    color: white;
+
+}
+/* End Features */
 
 /* Start animation  */
 @keyframes up-and-down {
