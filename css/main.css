@@ -92,6 +92,7 @@ a:hover {
     width: fit-content;
     transition: calc(var(--main-transition) + 0.3s);
     position: relative;
+    text-transform: uppercase;
 
 }
 
@@ -1188,7 +1189,130 @@ header .container nav .mega-menu li i {
 
 
 /* End Skills */
+/* Start how it works ? */
+.works {
+    background-color: var(--main-ec-color);
+    padding-top: var(--main-margin);
+    padding-bottom: var(--main-margin);
+    z-index: -10;
+}
 
+.works .works-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    row-gap: 70px;
+
+}
+
+.works .works-container .works-img {
+    width: 400px;
+    max-width: 80vw;
+    margin: 0 auto;
+
+}
+
+.works .works-container .works-img img {
+    width: 100%;
+}
+
+
+.works .works-container .works-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 50px;
+    margin: 0 auto;
+}
+
+.works .works-container .works-elements .works-element {
+    width: 550px;
+    max-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    position: relative;
+
+}
+
+
+.works .works-container .works-elements .works-element::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0 0 0 / 11%);
+    z-index: 0;
+    transition: var(--main-transition);
+}
+
+.works .works-container .works-elements .works-element:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.works .works-container .works-elements .works-element .works-step-img {
+    width: 80px;
+    max-width: 25%;
+    z-index: 10;
+}
+
+
+.works .works-container .works-elements .works-element .works-step-img img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.works .works-container .works-elements .works-element .works-content {
+    width: 75%;
+    z-index: 10;
+}
+
+.works .works-container .works-elements .works-element .works-content p {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+    color: grey;
+}
+
+@media (max-width: 768px) {
+    .works .works-container .works-elements .works-element {
+        flex-direction: column;
+    }
+
+    .works .works-container .works-elements .works-element .works-step-img {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .works .works-container .works-elements .works-element .works-content {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    .works .section-head h2 {
+        font-size: 20px;
+    }
+}
+
+/* End how it works ? */
 
 /* Start animation  */
 @keyframes up-and-down {
