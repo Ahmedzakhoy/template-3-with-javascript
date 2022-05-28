@@ -1090,6 +1090,105 @@ header .container nav .mega-menu li i {
 }
 
 /* End services */
+/* Start Skills */
+.skills {
+    background-color: white;
+    margin-bottom: var(--main-margin);
+}
+
+
+.skills .skills-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    row-gap: 70px;
+
+}
+
+.skills .skills-container .skills-img {
+    width: 400px;
+    max-width: 80vw;
+    margin: 0 auto;
+
+}
+
+.skills .skills-container .skills-img img {
+    width: 100%;
+}
+
+.skills .skills-container .skills-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 50px;
+    margin: 0 auto;
+
+}
+
+.skills .skills-container .skills-elements .skills-element {
+    width: 550px;
+    max-width: 80vw;
+}
+
+.skills .skills-container .skills-elements .skills-element .skills-prog {
+    height: 35px;
+    width: 100%;
+    background-color: #d6d1d1;
+    position: relative;
+}
+
+.skills .skills-container .skills-elements .skills-element .skills-prog::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+}
+
+.skills .skills-container .skills-elements .skills-element:first-child .skills-prog::before {
+    width: 90%;
+
+}
+
+.skills .skills-container .skills-elements .skills-element:nth-child(2) .skills-prog::before {
+    width: 90%;
+}
+
+.skills .skills-container .skills-elements .skills-element:nth-child(3) .skills-prog::before {
+    width: 80%;
+
+}
+
+.skills .skills-container .skills-elements .skills-element:last-child .skills-prog::before {
+    width: 75%;
+
+}
+
+.skills .skills-container .skills-elements .skills-element .skills-prog::after {
+    content: attr(percent);
+    height: 20px;
+    width: 30px;
+    background-color: white;
+    border: 1px solid #d6d1d1;
+    color: var(--main-color);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    top: -35px;
+    font-size: 12px;
+    right: 0;
+}
+
+
+/* End Skills */
+
 
 /* Start animation  */
 @keyframes up-and-down {
