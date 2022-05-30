@@ -56,6 +56,10 @@ a:hover {
     color: unset;
 }
 
+body {
+    margin: 0;
+}
+
 /* Small */
 @media (min-width: 768px) {
     .container {
@@ -1363,7 +1367,7 @@ header .container nav .mega-menu li i {
 
 }
 
-.events .events-container .events-first-container .events-content .events-timer div .number {
+.events .events-container .events-first-container .events-content .events-timer div .tel {
     display: block;
     text-align: center;
     color: var(--main-color);
@@ -1385,7 +1389,7 @@ header .container nav .mega-menu li i {
     border-bottom-right-radius: 10px;
 }
 
-.events .events-container .events-first-container .events-content .events-timer div:hover .number,
+.events .events-container .events-first-container .events-content .events-timer div:hover .tel,
 .events .events-container .events-first-container .events-content .events-timer div:hover .unit {
     border-color: var(--main-color);
 }
@@ -1843,6 +1847,14 @@ header .container nav .mega-menu li i {
     font-size: 30px;
 }
 
+.stats .stats-container .stats-body .stats-element .tel {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
 .stats .stats-container .stats-body .stats-element .number {
     display: block;
     text-align: center;
@@ -1861,6 +1873,161 @@ header .container nav .mega-menu li i {
 }
 
 /*End stats*/
+/* Start Discount */
+.discount {}
+
+.discount .discount-container {
+    width: 98vw;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+
+.discount .discount-container .intro-section {
+    width: 50%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 50px;
+    height: 100%;
+}
+
+.discount .discount-container .discount-section h2 {}
+
+.discount .discount-container .intro-section h2 {}
+
+.discount .discount-container .intro-section h2 {
+    margin: 30px auto;
+    display: block;
+    width: fit-content;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.discount .discount-container .intro-section p {
+    margin: 0 auto 50px;
+    display: block;
+    width: 95%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.discount .discount-container .intro-section img {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+    max-width: 70vw;
+}
+
+.discount .discount-container .discount-section {
+    width: 50%;
+    background-color: white;
+    padding: 50px;
+    height: 100%;
+
+}
+
+.discount .discount-container .discount-section h2 {
+    margin: 20px auto 50px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.discount .discount-container .discount-section input[type="text"],
+.discount .discount-container .discount-section input[type="email"],
+.discount .discount-container .discount-section input[type="tel"],
+.discount .discount-container .discount-section textarea {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 20px 20px;
+    caret-color: var(--main-color);
+    width: 50%;
+    background-color: var(--main-ec-color);
+    border: none;
+    border-bottom: 1px solid #aaa;
+    resize: none;
+}
+
+.discount .discount-container .discount-section input[type="text"]:focus,
+.discount .discount-container .discount-section input[type="email"]:focus,
+.discount .discount-container .discount-section input[type="tel"]:focus,
+.discount .discount-container .discount-section textarea:focus {
+    outline: none;
+}
+
+.discount .discount-container .discount-section input[type="submit"] {
+    display: block;
+    padding: 20px 20px;
+    width: 50%;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.discount .discount-container .discount-section input[type="submit"]:hover {
+    background-color: rgb(22 130 216);
+}
+
+@media (max-width: 1000px) {
+    .discount .discount-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .discount .discount-container .intro-section {
+        width: 100%;
+    }
+
+    .discount .discount-container .discount-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 660px) {
+
+    .discount .discount-container .discount-section input[type="text"],
+    .discount .discount-container .discount-section input[type="email"],
+    .discount .discount-container .discount-section input[type="tel"],
+    .discount .discount-container .discount-section textarea {
+        width: 80%;
+    }
+
+    .discount .discount-container .discount-section input[type="submit"] {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .discount .discount-container .discount-section h2 {
+        font-size: 20px;
+    }
+
+    .discount .discount-container .intro-section h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .discount .discount-container .discount-section input[type="text"],
+    .discount .discount-container .discount-section input[type="email"],
+    .discount .discount-container .discount-section input[type="tel"],
+    .discount .discount-container .discount-section textarea {
+        width: 100%;
+    }
+
+    .discount .discount-container .discount-section input[type="submit"] {
+        width: 100%;
+    }
+
+}
+
+/* End Discount */
 /* Start animation  */
 @keyframes up-and-down {
 
