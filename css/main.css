@@ -1363,8 +1363,6 @@ header .container nav .mega-menu li i {
 
 }
 
-.events .events-container .events-first-container .events-content .events-timer div {}
-
 .events .events-container .events-first-container .events-content .events-timer div .number {
     display: block;
     text-align: center;
@@ -1481,6 +1479,195 @@ header .container nav .mega-menu li i {
 }
 
 /* End events */
+
+/*Start Pricing*/
+
+.pricing-plans {
+    background-color: var(--main-ec-color);
+    padding-top: var(--main-margin);
+    padding-bottom: var(--main-margin);
+    z-index: -10;
+}
+
+.pricing-plans .pricing-plans-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    row-gap: 70px;
+
+}
+
+
+.pricing-plans .pricing-plans-container .pricing-element {
+    background-color: white;
+    width: 350px;
+    max-width: 90vw;
+    padding: 20px;
+    box-shadow: 0 0 10px #00000070;
+    position: relative;
+    z-index: 99;
+    margin: 0 auto;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element::after,
+.pricing-plans .pricing-plans-container .pricing-element::before {
+    content: "";
+    height: 50%;
+    width: 0;
+    background-color: #80808026;
+    position: absolute;
+    transition: var(--main-transition);
+    z-index: -9;
+
+
+}
+
+.pricing-plans .pricing-plans-container .pricing-element::before {
+    left: 0;
+    top: 0;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element::after {
+    right: 0;
+    bottom: 0;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element:hover::before,
+.pricing-plans .pricing-plans-container .pricing-element:hover::after {
+    width: 100%;
+}
+
+@media (min-width: 1267px) {
+    .pricing-plans .pricing-plans-container .pricing-element:nth-child(2) {
+        position: relative;
+        top: -20px;
+    }
+
+}
+
+.pricing-plans .pricing-plans-container .pricing-element:nth-child(2) .element-head {
+    position: relative;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element:nth-child(2) .element-head::before {
+    content: "Most Popular";
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    position: absolute;
+    top: -20px;
+    right: 5.5px;
+    /* transform: rotate(90deg); */
+    writing-mode: vertical-rl;
+    background: var(--main-color);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element:nth-child(2) .element-head::after {
+    content: "";
+    position: absolute;
+    top: 87px;
+    right: 5.5px;
+    border-bottom: 19px solid transparent;
+    border-right: 18px solid var(--main-color);
+    border-left: 19px solid var(--main-color);
+    border-top: 5px solid var(--main-color);
+}
+
+@media (max-width: 400px) {
+    .pricing-plans .pricing-plans-container .pricing-element:nth-child(2) .element-head::before {
+        right: -10.2px;
+    }
+
+    .pricing-plans .pricing-plans-container .pricing-element:nth-child(2) .element-head::after {
+        right: -10px;
+    }
+
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-head .pricing-name {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-head img {
+    width: 100px;
+    margin: 40px auto;
+    display: block;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-head .price {
+    text-align: center;
+    font-weight: bold;
+    font-size: 55px;
+    color: var(--main-color);
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-head .period {
+    text-align: center;
+    margin-top: -7px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+
+.pricing-plans .pricing-plans-container .pricing-element .element-body .feature {
+    padding: 20px 20px;
+    border-top: 1px solid #ccc;
+    position: relative;
+    left: -20px;
+    width: calc(100% + 40px);
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-body .feature i {
+    color: var(--main-color);
+    display: inline-block;
+    width: fit-content;
+    font-size: 25px;
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-body .feature p {
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+
+
+.pricing-plans .pricing-plans-container .pricing-element .element-foot a {
+    border: 2px solid var(--main-color);
+    display: block;
+    width: fit-content;
+    padding: 15px 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--main-color);
+    transition: var(--main-transition);
+    z-index: 9;
+
+}
+
+.pricing-plans .pricing-plans-container .pricing-element .element-foot a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+@media (max-width: 350px) {
+    .pricing-plans .section-head h2 {
+        font-size: 20px;
+    }
+}
+
+/*End Pricing*/
 /* Start animation  */
 @keyframes up-and-down {
 
