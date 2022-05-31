@@ -143,6 +143,41 @@ body {
     left: 0;
 }
 
+.spikes {
+    position: relative;
+}
+
+.spikes::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: calc(var(--main-margin) * -1);
+    width: 100%;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    z-index: 1;
+    background-size: 40px 40px;
+    height: 30px;
+}
+
+.dots {
+    position: absolute;
+    background-image: url(../imgs/dots.png);
+    width: 200px;
+    background-repeat: no-repeat;
+    height: 200px;
+    z-index: -1;
+}
+
+.dots-up {
+    top: 200px;
+    right: 0;
+}
+
+.dots-down {
+    bottom: 200px;
+    left: 0;
+}
+
 /* End Global Rules */
 
 /* Start Header  */
@@ -525,7 +560,8 @@ header .container nav .mega-menu li i {
     background-color: var(--main-ec-color);
     padding-top: var(--main-margin);
     padding-bottom: var(--main-margin);
-    z-index: -10;
+    z-index: 1;
+    position: relative;
 }
 
 .gallery .gallery-container {
