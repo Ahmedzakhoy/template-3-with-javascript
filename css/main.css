@@ -1415,17 +1415,6 @@ header .container nav .mega-menu li i {
     border-top-left-radius: 10px;
 }
 
-.events .events-container .events-first-container .events-content .events-timer div .tel {
-    display: block;
-    text-align: center;
-    color: var(--main-color);
-    font-weight: bold;
-    font-size: 30px;
-    border: 1px solid #adadad;
-    padding: 5px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
 
 .events .events-container .events-first-container .events-content .events-timer div .unit {
     border: 1px solid #adadad;
@@ -1437,7 +1426,7 @@ header .container nav .mega-menu li i {
     border-bottom-right-radius: 10px;
 }
 
-.events .events-container .events-first-container .events-content .events-timer div:hover .tel,
+.events .events-container .events-first-container .events-content .events-timer div:hover .number,
 .events .events-container .events-first-container .events-content .events-timer div:hover .unit {
     border-color: var(--main-color);
 }
