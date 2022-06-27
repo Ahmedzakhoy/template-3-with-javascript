@@ -176,6 +176,9 @@ body {
   left: 0;
 }
 
+.blur {
+  filter: blur(20px);
+}
 /* End Global Rules */
 
 /* Start Header  */
@@ -1950,7 +1953,6 @@ header .container nav .mega-menu li i {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  height: 100vh;
   margin: 0 auto;
 }
 
@@ -1959,7 +1961,6 @@ header .container nav .mega-menu li i {
   background-color: var(--main-color);
   color: white;
   padding: 50px;
-  height: 100%;
 }
 
 .discount .discount-container .intro-section h2 {
