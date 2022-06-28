@@ -194,7 +194,7 @@ const loadSection = function (entries, observer) {
 const sectionObserver2 = new IntersectionObserver(loadSection, {
   root: null,
   threshold: 0,
-  rootMargin: "-200px",
+  rootMargin: "-100px",
 });
 
 //implement observe() method
@@ -235,7 +235,7 @@ const loadBar = function (entries, observer) {
 const barObserver = new IntersectionObserver(loadBar, {
   root: null,
   threshold: 0,
-  rootMargin: "-150px",
+  rootMargin: "-20px",
 });
 
 //implement observe() method on bar

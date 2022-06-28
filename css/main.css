@@ -395,7 +395,11 @@ header .container nav .mega-menu li i {
   overflow: hidden;
   position: relative;
 }
-
+@media (max-height: 650px) {
+  .landing {
+    height: 170vh;
+  }
+}
 .landing::before {
   content: "";
   width: 100%;
@@ -1239,7 +1243,9 @@ header .container nav .mega-menu li i {
   width: 100%;
   padding: 0 50px;
   transition: calc(var(--main-transition) + 0.2s);
+  filter: drop-shadow(0 0 10px #00000070);
 }
+
 .works .works-container .works-imgs i {
   position: absolute;
   top: 50%;
@@ -1268,6 +1274,19 @@ header .container nav .mega-menu li i {
   background-color: black;
   border-radius: 50%;
   cursor: pointer;
+}
+@media (max-width: 600px) {
+  .works .works-container .works-imgs {
+    padding: 20px;
+  }
+
+  .works .works-container .works-imgs img {
+    padding: 0 25px;
+  }
+  .works .works-container .works-imgs .buttons .button {
+    width: 10px;
+    height: 10px;
+  }
 }
 .works .works-container .works-imgs .buttons .active {
   background-color: var(--main-color);
