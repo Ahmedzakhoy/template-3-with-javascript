@@ -1216,24 +1216,62 @@ header .container nav .mega-menu li i {
 
 .works .works-container {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 30px;
   row-gap: 70px;
 }
 
-.works .works-container .works-img {
-  width: 400px;
+.works .works-container .works-imgs {
+  width: 600px;
   max-width: 80vw;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
 }
 
-.works .works-container .works-img img {
+.works .works-container .works-imgs img {
   width: 100%;
+  padding: 0 50px;
+  transition: calc(var(--main-transition) + 0.2s);
 }
-
+.works .works-container .works-imgs i {
+  position: absolute;
+  top: 50%;
+  color: var(--main-color);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 5;
+}
+.works .works-container .works-imgs .left {
+  left: 0;
+}
+.works .works-container .works-imgs .right {
+  right: 0;
+}
+.works .works-container .works-imgs .buttons {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+}
+.works .works-container .works-imgs .buttons .button {
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.works .works-container .works-imgs .buttons .active {
+  background-color: var(--main-color);
+}
 .works .works-container .works-elements {
   display: flex;
   align-items: center;
@@ -2252,7 +2290,7 @@ header .container nav .mega-menu li i {
 }
 
 @keyframes hover-up {
-  0,
+  0%,
   50% {
     width: 100%;
     height: 100%;

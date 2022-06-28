@@ -307,3 +307,66 @@ videoList.addEventListener("click", function (event) {
     vid.classList.add("active");
   }
 });
+/////////////////////////////////////////////////////
+//implementing image slider
+
+//wrapping function
+function imgSlider() {
+  //selections
+  const imgEl = document.querySelectorAll(
+    ".works .works-container .works-imgs img"
+  );
+  const slideRight = document.querySelector(".right");
+  const slideLeft = document.querySelector(".left");
+  const positionBtns = document.querySelector(
+    ".works .works-container .works-imgs .buttons"
+  );
+  console.log();
+  //cache the number of img being displayed
+  let imgNum = 0;
+  //function go to
+  const goTo = function () {
+    imgEl.forEach((img) => {
+      img.style.transform = `translateX(${imgNum * -100}%)`;
+    });
+    positionBtns
+      .querySelectorAll(".button")
+      .forEach((button) => button.classList.remove("active"));
+    document.querySelector(`.button${imgNum}`).classList.add("active");
+  };
+  //go previous image function
+  const goPrevious = function () {
+    if (imgNum === 0) {
+      imgNum = 2;
+    } else if (imgNum > 0) {
+      imgNum--;
+    }
+    goTo();
+  };
+  //go next image function
+  const goNext = function () {
+    if (imgNum === 2) {
+      imgNum = 0;
+    } else if (imgNum < 2) {
+      imgNum++;
+    }
+    goTo();
+  };
+  //event listeners
+  slideRight.addEventListener("click", goNext);
+  slideLeft.addEventListener("click", goPrevious);
+  positionBtns.addEventListener("click", function (event) {
+    const btn = event.target;
+    const btnNumber = btn.dataset.number;
+
+    if (!btnNumber) return;
+    imgNum = +btnNumber;
+    goTo();
+  });
+
+  //go next every 5 seconds
+  setInterval(goNext, 5000);
+}
+
+//call the wrapping function
+imgSlider();
