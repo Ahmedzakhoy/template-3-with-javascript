@@ -241,3 +241,69 @@ const barObserver = new IntersectionObserver(loadBar, {
 //implement observe() method on bar
 allBars.forEach((bar) => barObserver.observe(bar));
 ////////////////////////////////////////////////////////////
+//implementing videos from youtube Iframe API
+
+//selections and videos ID array
+const videosArray = [
+  `Z-zNHHpXoMM`,
+  `ukLnPbIffxE`,
+  `qiYDYsPslrc`,
+  `lyJqgL3Zp4E`,
+  `tu9h8LTFkKk`,
+  `zIYC6zG265E`,
+  `u0KVJ0lj8rw`,
+];
+const videoList = document.querySelector(".videos-list");
+const videoLists = document.querySelectorAll(".videos-list .list-item");
+const videoPreview = document.querySelector(".video-preview");
+
+//youtube API call start
+// 1. This code loads the IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 2. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady(id = "Z-zNHHpXoMM") {
+  player = new YT.Player("player", {
+    height: "390",
+    width: "640",
+    videoId: `${id}`,
+    playerVars: {
+      playsinline: 1,
+    },
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+    },
+  });
+}
+function onPlayerReady() {}
+function onPlayerStateChange() {}
+//youtube API call end
+
+/////////////////////////////////////////////////////
+const previewReset = function () {
+  videoPreview.innerHTML = "";
+  videoPreview.innerHTML = `
+  <div id="player"></div>
+  <p>Nice Videos You Might Need To Watch</p>
+  `;
+};
+videoList.addEventListener("click", function (event) {
+  const vid = event.target.closest(".list-item");
+  if (!vid) return;
+  const vidNum = +vid.dataset.num;
+  if (!vid.classList.contains("active")) {
+    previewReset();
+    onYouTubeIframeAPIReady(videosArray[vidNum]);
+    videoLists.forEach(function (el) {
+      el.classList.remove("active");
+    });
+    vid.classList.add("active");
+  }
+});
