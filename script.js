@@ -113,14 +113,14 @@ function stickyNavParentFunction(element, className, match = false) {
       megaMenu.classList.remove("show-mega-menu-media");
     } else {
       element.classList.remove(className);
-      overlay.style.top = match && entry.isIntersecting ? "148px" : "74px";
+      overlay.style.top = match ? "148px" : "74px";
       match ? megaMenu.classList.add("show-mega-menu-media") : "";
     }
   };
   const headerObserver = new IntersectionObserver(stickyNav, {
     root: null,
     threshold: 0,
-    rootMargin: `-${headerHeight + 20}px`,
+    rootMargin: `-${headerHeight}px`,
   });
   headerObserver.observe(landing);
 }
@@ -370,3 +370,21 @@ function imgSlider() {
 
 //call the wrapping function
 imgSlider();
+////////////////////////////////////////////////////////////
+//adding tabbed component
+
+// selections
+const tabsParent = document.querySelector(".tabs");
+const tabs = [...tabsParent.children];
+const AllElements = document.querySelectorAll(".works-element");
+
+tabsParent.addEventListener("click", function (event) {
+  const tab = event.target.closest(".tab");
+  if (!tab) return;
+  const number = tab.dataset.number;
+  const element = document.querySelector(`.element${number}`);
+  tabs.forEach((el) => el.classList.remove("active"));
+  tab.classList.add("active");
+  AllElements.forEach((el) => el.classList.add("hidden"));
+  element.classList.remove("hidden");
+});

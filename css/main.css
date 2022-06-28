@@ -1300,6 +1300,43 @@ header .container nav .mega-menu li i {
   margin: 0 auto;
 }
 
+.works .works-container .works-elements .tabs {
+  display: flex;
+  gap: 25px;
+}
+.works .works-container .works-elements .tabs .tab {
+  background-color: var(--main-color);
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  color: white;
+  font-weight: bold;
+  transition: var(--main-transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.works .works-container .works-elements .tabs .active {
+  transform: translateY(-10px);
+}
+@media (max-width: 600px) {
+  .works .works-container .works-elements .tabs .tab {
+    background-color: var(--main-color);
+    padding: 3px 7px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    font-size: 10px;
+  }
+  .works .works-container .works-elements .tabs {
+    gap: 7px;
+  }
+}
+.works .works-container .works-elements .tabs .tab:hover {
+  background-color: transparent;
+  border-color: var(--main-color);
+  color: black;
+}
 .works .works-container .works-elements .works-element {
   width: 550px;
   max-width: 80vw;
@@ -1312,7 +1349,9 @@ header .container nav .mega-menu li i {
   background-color: #f3f3f3;
   position: relative;
 }
-
+.works .works-container .works-elements .hidden {
+  display: none;
+}
 .works .works-container .works-elements .works-element::before {
   content: "";
   width: 0;
