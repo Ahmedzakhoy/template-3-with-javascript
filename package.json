@@ -1,0 +1,19 @@
+{
+  "name": "template-3",
+  "version": "1.0.0",
+  "description": "ahmed's implementation of template 3 with javascript",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Ahmed Mustafa",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.1"
+  },
+  "dependencies": {
+    "core-js": "^3.23.1",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

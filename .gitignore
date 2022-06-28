@@ -1,1 +1,4 @@
 HTML_And_CSS_Template_Three-main/
+node_modules/
+.parcel-cache/
+dist/
