@@ -6,13 +6,21 @@
 //selections
 const AllSections = document.querySelectorAll(".section");
 const AllImgs = document.querySelectorAll(".section img");
-
+const specialImg = document.querySelector(".landing img");
 //change img src and blur
 AllImgs.forEach((img) => {
   img.classList.add("blur");
   const src = img.getAttribute("src");
   img.dataset.src = src;
   img.src = `compressed-imgs${src.slice(4)}`;
+});
+
+//load special landing image after window load event fires
+window.addEventListener("load", () => {
+  specialImg.src = specialImg.dataset.src;
+  specialImg.addEventListener("load", function () {
+    specialImg.classList.remove("blur");
+  });
 });
 
 //callback function for intersection observer
@@ -162,3 +170,34 @@ function timer() {
 }
 //set interval timer
 const countDownInterval = setInterval(timer, 1000);
+////////////////////////////////////////////////////////////
+//implementing section loading on scroll
+
+//adding section loading class to all sections
+const AllSectionsExceptHeaderLandingFooter = [...AllSections].slice(2, -1);
+
+AllSectionsExceptHeaderLandingFooter.forEach((section) => {
+  section.classList.add("section-loading");
+});
+
+//callback function for intersection observer
+const loadSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  const section = entry.target;
+  //remove section-loading class
+  section.classList.remove("section-loading");
+  observer.unobserve(section);
+};
+
+//section observer function
+const sectionObserver2 = new IntersectionObserver(loadSection, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-200px",
+});
+
+//implement observe() method
+AllSectionsExceptHeaderLandingFooter.forEach((section) =>
+  sectionObserver2.observe(section)
+);
