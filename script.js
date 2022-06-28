@@ -201,3 +201,43 @@ const sectionObserver2 = new IntersectionObserver(loadSection, {
 AllSectionsExceptHeaderLandingFooter.forEach((section) =>
   sectionObserver2.observe(section)
 );
+////////////////////////////////////////////////////////////
+//implementing progress bar filling on scroll
+
+//selections
+const bar1 = document.querySelector(
+  ".skills .skills-container .skills-elements .skills-element .bar1"
+);
+const bar2 = document.querySelector(
+  ".skills .skills-container .skills-elements .skills-element .bar2"
+);
+const bar3 = document.querySelector(
+  ".skills .skills-container .skills-elements .skills-element .bar3"
+);
+const bar4 = document.querySelector(
+  ".skills .skills-container .skills-elements .skills-element .bar4"
+);
+const allBars = document.querySelectorAll(
+  ".skills .skills-container .skills-elements .skills-element .skills-prog div"
+);
+
+//callback function for intersection observer
+const loadBar = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  const bar = entry.target;
+  //add style width to bar
+  bar.style.width = bar.closest(".skills-prog").dataset.percent;
+  observer.unobserve(bar);
+};
+
+//bar observer function
+const barObserver = new IntersectionObserver(loadBar, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-150px",
+});
+
+//implement observe() method on bar
+allBars.forEach((bar) => barObserver.observe(bar));
+////////////////////////////////////////////////////////////

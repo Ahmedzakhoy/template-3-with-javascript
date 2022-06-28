@@ -1175,12 +1175,7 @@ header .container nav .mega-menu li i {
   position: relative;
 }
 
-.skills
-  .skills-container
-  .skills-elements
-  .skills-element
-  .skills-prog::before {
-  content: "";
+.skills .skills-container .skills-elements .skills-element .skills-prog div {
   height: 100%;
   position: absolute;
   top: 0;
@@ -1188,40 +1183,13 @@ header .container nav .mega-menu li i {
   background-color: var(--main-color);
 }
 
-.skills
-  .skills-container
-  .skills-elements
-  .skills-element:first-child
-  .skills-prog::before {
-  width: 90%;
-}
-
-.skills
-  .skills-container
-  .skills-elements
-  .skills-element:nth-child(2)
-  .skills-prog::before {
-  width: 90%;
-}
-
-.skills
-  .skills-container
-  .skills-elements
-  .skills-element:nth-child(3)
-  .skills-prog::before {
-  width: 80%;
-}
-
-.skills
-  .skills-container
-  .skills-elements
-  .skills-element:last-child
-  .skills-prog::before {
-  width: 75%;
+.skills .skills-container .skills-elements .skills-element div {
+  width: 0;
+  transition: 1s;
 }
 
 .skills .skills-container .skills-elements .skills-element .skills-prog::after {
-  content: attr(percent);
+  content: attr(data-percent);
   height: 20px;
   width: 30px;
   background-color: white;
